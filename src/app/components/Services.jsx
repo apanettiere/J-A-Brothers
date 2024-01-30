@@ -1,15 +1,23 @@
+"use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const Services = ({ image, title, content }) => {
-  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1060); // Assuming 1060px as the breakpoint for smaller devices
+  // Initialize isLargeScreen without relying on the window object
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
 
   useEffect(() => {
+    // Update the isLargeScreen state based on the current window width
+    setIsLargeScreen(window.innerWidth > 1060);
+
     const handleResize = () => {
       setIsLargeScreen(window.innerWidth > 1060);
     };
+
+    // Set up the resize event listener
     window.addEventListener("resize", handleResize);
 
+    // Clean up the event listener when the component unmounts
     return () => {
       window.removeEventListener("resize", handleResize);
     };

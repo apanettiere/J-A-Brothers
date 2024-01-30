@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import Image from "next/image";
 
 const EmailSection = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
@@ -41,7 +41,6 @@ const EmailSection = () => {
       id="contact"
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
     >
-      
       <div className="z-2">
         <h5 className="text-xl font-bold text-white my-2">Contact Us</h5>
         <p className="text-white mb-4 max-w-md">
@@ -52,12 +51,12 @@ const EmailSection = () => {
           in pressure washing services!
         </p>
         <div className="socials flex flex-row gap-2">
-          <img
+          <Image
             src="/images/fence.svg"
             className="rounded-lg"
             alt="fence"
-            width="Full"
-            height="Full"
+            width={450} // Replace with your desired width
+            height={250} // Replace with your desired height
           />
         </div>
       </div>
